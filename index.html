@@ -1,0 +1,26 @@
+<html>
+<head>
+    <script src="./node_modules/showdown/dist/showdown.js"></script>
+</head>
+<body>
+<textarea id="input" rows="10" cols="200">
+Showdown Demo
+=============
+
+Code with javascript:
+
+```js
+function hello() {
+    alert("Hello!")
+}
+```
+</textarea>
+<div id="preview" class="markdown-body"></div>
+<script>
+    const converter = new showdown.Converter();
+    const text = document.getElementById('input').innerHTML;
+    const html = converter.makeHtml(text);
+    document.getElementById('preview').innerHTML = html;
+</script>
+</body>
+</html>
